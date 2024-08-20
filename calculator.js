@@ -1,5 +1,5 @@
 const display = document.querySelector(".display");
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".button-calci");
 
 let currentValue = "0";
 let operation = null;
