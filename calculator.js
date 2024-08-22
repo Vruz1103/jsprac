@@ -5,6 +5,7 @@ const buttons = document.querySelectorAll(".button-calci");
 let currentValue = "";
 let operation = null;
 let firstOperand = null;
+let resultDeclared = false;
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -40,7 +41,8 @@ buttons.forEach((button) => {
 });
 
 function updateDisplay(value) {
-  if (currentValue === "0") {
+  if (currentValue === "0" || resultDeclared) {
+    resultDeclared = false;
     currentValue = value;
   } else {
     currentValue += value;
@@ -82,6 +84,7 @@ function calculateResult() {
 
   display.textContent = result.toString();
   currentValue = result.toString();
+  resultDeclared = true;
   operation = null;
   firstOperand = null;
   displayop.textContent = null;
