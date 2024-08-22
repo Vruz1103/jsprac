@@ -1,7 +1,8 @@
 const display = document.querySelector(".display");
+const displayop = document.querySelector(".displayop");
 const buttons = document.querySelectorAll(".button-calci");
 
-let currentValue = "0";
+let currentValue = "";
 let operation = null;
 let firstOperand = null;
 
@@ -48,12 +49,14 @@ function updateDisplay(value) {
 }
 
 function handleOperation(op) {
+  console.log("op", op);
   if (operation !== null) {
     calculateResult();
   }
   operation = op;
   firstOperand = parseFloat(currentValue);
   currentValue = "0";
+  displayop.textContent = op;
 }
 
 function calculateResult() {
@@ -81,6 +84,7 @@ function calculateResult() {
   currentValue = result.toString();
   operation = null;
   firstOperand = null;
+  displayop.textContent = null;
 }
 
 function clearDisplay() {
@@ -88,4 +92,5 @@ function clearDisplay() {
   operation = null;
   firstOperand = null;
   display.textContent = currentValue;
+  displayop.textContent = null;
 }

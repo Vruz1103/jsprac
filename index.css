@@ -5,7 +5,7 @@
   padding: 10px;
 }
 
-.display {
+/* .display {
   height: 50px;
   font-size: 36px;
   text-align: right;
@@ -13,7 +13,7 @@
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-}
+} */
 
 .buttons {
   display: grid;
@@ -27,4 +27,27 @@
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   cursor: pointer;
+}
+
+.displaywrapper {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Place elements on opposite sides */
+  padding: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* width: 200p; Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  font-size: 24px;
+}
+
+.displayop {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Optional: Style the digits inside display */
+.display .digits {
+  color: #000;
 }
